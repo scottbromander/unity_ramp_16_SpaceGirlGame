@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <None Include="Assets\sources.txt" />
  <Reference Include="UnityEngine.Networking">
