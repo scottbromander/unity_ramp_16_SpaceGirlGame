@@ -5,8 +5,9 @@ public class PlayerMove : MonoBehaviour {
 	public float speed = 10;
 	private Rigidbody2D rigidBody2D;
 
-	void awake () {
+	void Awake () {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
+
 	}
 
 	void FixedUpdate(){
