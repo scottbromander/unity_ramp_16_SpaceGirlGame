@@ -1,29 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-	public Text starText;
+	private PlayerInventoryDisplay playerInventoryDisplay;
 	private bool carryingStar = false;
 
 	// Use this for initialization
 	void Start () {
-		UpdateStarText ();
+		playerInventoryDisplay = GetComponent<PlayerInventoryDisplay> ();
+		playerInventoryDisplay.OnChangeCarryingStar (carryingStar);
+
 	}
 
 	void OnTriggerEnter2D(Collider2D hit){
 		if(hit.CompareTag("Star")){
 			carryingStar = true;
-			UpdateStarText ();
+			playerInventoryDisplay.OnChangeCarryingStar (carryingStar);
 			Destroy (hit.gameObject);
 		}
-	}
-
-	private void UpdateStarText() {
-		string starMessage = "No Star :(";
-		if (carryingStar)
-			starMessage = "Carrying Star :)";
-		starText.text = starMessage;
 	}
 	
 	// Update is called once per frame
